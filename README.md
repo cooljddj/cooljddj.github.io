@@ -1,2 +1,3 @@
-# cooljddj.github.io  
-:P
+### Website about me  
+## cooljddj.github.oi  
+# Redirect cooljaaj.zz.mu
