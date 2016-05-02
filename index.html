@@ -1,19 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <!-- All images and files will come from cooljddj.zz.mu -->
-  
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link href="stylesheets/stylesheet.css" rel="stylesheet" type="text/css" /> 
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script>
+function serverStatus(){
+    if (typeof window.my_config == "undefined"){
+        window.my_config = {}
+    }
+    $.ajax({
+            url: 'https://raw.githubusercontent.com/cooljddj/cooljddj.github.io/master/status.json',
+            type: 'get',
+            dataType: "json",
+            cache: false,
+            success: function(json){
+                if (json.status == 'error'){
+                	$('#status').attr("class", "label label-primary")
+                    $('#status').text(json.message);
+                }
+                else if (json.pid){
+                    $("#status").text(json.status + ' (' + json.pid + ')');
+                    $("#status").attr("class", "label label-info");
+                    window.my_config['server-online'] = true
+                }
+                else{
+                    $('#status').text(json.status);
+                    if (json.status == 'Online'){
+                        window.my_config['server-online'] = true
+                        $("#status").attr("class", "label label-success");
+                    }
+                    else if (json.status == 'Updating'){
+                        window.my_config['server-online'] = true
+                        $("#status").attr("class", "label label-warning");
+                    }
+                    else{
+                        window.my_config['server-online'] = false
+                        $("#status").attr("class", "label label-danger");
+                    }
+                }
+            }, error: function(){
+            	$('#status').attr("class", "label label-info")
+                $('#status').text('Error making connection');
+            }
+        });
+}
 
-  <title>Jared De Lyon</title>
-  <meta name="description" content="">
+serverStatus();
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+setInterval(serverStatus, 5000);
 
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<link href="stylesheets/labels.css" rel="stylesheet" type="text/css" /> 
 </head>
-
-<body>
-  <h1>Welcome we are closed right now</h1>
+<body style="background-color: black">
+<header id="header">
+<div id="linediv">
+<div class="wrapper">
+<div id="header-left"><span class="cname">Psychotic Studios<br><br><span id="status" class="label label-danger">Offline</span><br></div><div id="header-center"><img src="images/gmod-195.png" id="header-center"></img></div><div id="header-right"><span class="cname">Developers of the <br></div></div></header>
 </body>
 </html>
