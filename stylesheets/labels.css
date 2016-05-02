@@ -1,0 +1,73 @@
+.label {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+  text-decoration: none;
+}
+a.label:hover,
+a.label:focus {
+  color: #ffffff;
+  cursor: pointer;
+}
+.label:empty {
+  display: none;
+}
+.btn .label {
+  position: relative;
+  top: -1px;
+}
+.label-default {
+  background-color: #777777;
+  text-decoration: none;
+}
+.label-default[href]:hover,
+.label-default[href]:focus {
+  background-color: #5e5e5e;
+}
+.label-primary {
+  background-color: #f46d3b;
+  text-decoration: none;
+}
+.label-primary[href]:hover,
+.label-primary[href]:focus {
+  background-color: #ef4a0d;
+}
+.label-success {
+  background-color: #5cb85c;
+  text-decoration: none;
+}
+.label-success[href]:hover,
+.label-success[href]:focus {
+  background-color: #449d44;
+}
+.label-info {
+  background-color: #4c93ea;
+  text-decoration: none;
+}
+.label-info[href]:hover,
+.label-info[href]:focus {
+  background-color: #1e77e5;
+}
+.label-warning {
+  background-color: #f0ad4e;
+  text-decoration: none;
+}
+.label-warning[href]:hover,
+.label-warning[href]:focus {
+  background-color: #ec971f;
+}
+.label-danger {
+  background-color: #d9534f;
+  text-decoration: none;
+}
+.label-danger[href]:hover,
+.label-danger[href]:focus {
+  background-color: #c9302c;
+}
