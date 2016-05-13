@@ -1,4 +1,4 @@
 {
-	"error": 1,
-	"msg": "The API is disabled"
+	"myerror": 1,
+	"mymsg": "The API is disabled"
 }
