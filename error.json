@@ -1,8 +1,8 @@
 {
 	"myerror": 1,
 	"display": 0,
-	"displayURL": 1,
-	"displayNONE": 0,
+	"displayurl": 1,
+	"displaynone": 0,
 	"mymsg": "The API is disabled"
-	"URL": "https://www.codecademy.com/learn"
+	"url": "https://www.codecademy.com/learn"
 }
