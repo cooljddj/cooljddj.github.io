@@ -1,6 +1,6 @@
 {
 	"myerror": 1,
-	"display": 0,
+	"display": 1,
 	"displayurl": 1,
 	"displaynone": 0,
 	"mymsg": "The API is disabled"
